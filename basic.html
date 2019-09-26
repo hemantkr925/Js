@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript MDN</title>
+	<style type="text/css">
+	.heading{
+		height: 100px;
+		width: 250px;
+		margin: 50px;
+		padding: 50px;
+		border: 1px solid #000;
+		color: #d5d5d5;
+	}
+	</style>
+	<script type="text/javascript">
+	let myHeading = document.querySelector('h1');
+	myHeading.textContent = 'Hello world!';
+	document.querySelector('html').onclick = function() {
+		alert('Ouch! Stop poking me!');
+	}
+	let myButton = document.querySelector('button');
+	document.addEventListener("DOMContentLoaded", function() {
+		function createParagraph() {
+			let para = document.createElement('p');
+			para.textContent = 'You clicked the button!';
+			document.body.appendChild(para);
+		}
+		const buttons = document.querySelectorAll('button');
+		for(let i = 0; i < buttons.length ; i++) {
+			buttons[i].addEventListener('click', createParagraph);
+		}
+	});
+	function createParagraph() {
+		let para = document.createElement('p');
+		para.textContent = 'You clicked the button!';
+		document.body.appendChild(para);
+	}
+	</script>
+</head>
+<body>
+	<h1 class="heading">My World</h1>
+	<button>Change user</button>
+	<figure>
+	    <img src="images.jpg"
+	         alt="Elephant at sunset">
+	    <figcaption>An elephant at sunset</figcaption>
+	</figure>
+	<p>Click Here</p>
+		<button onclick="createParagraph()">Click me!</button>
+
+</body>
+</html>

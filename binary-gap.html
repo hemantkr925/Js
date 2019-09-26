@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Longest Binary Gap</title>
+	<style type="text/css"></style>	
+</head>
+<body>
+<script type="text/javascript">
+function Solution(n) {
+	var binary = Number(n.toString(2));
+	// console.log(binary);
+	var spldigit = binary.toString().split('1');
+	var newarr = spldigit.filter(function (e) { return e === 0 || e; });
+	newarr.sort();
+	console.log(newarr);
+	if(newarr.length>2) {
+		var gap= spldigit[newarr.length-1].length;
+	} else {
+		var gap=0;
+	}
+	console.log(gap);
+}
+Solution(458);
+</script>
+</body>
+</html>

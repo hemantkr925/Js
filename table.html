@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<table border="1" bgcolor="#d5d5d5" id="tbl">
+	<tr>
+		<td>5</td>
+		<td>A</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td>X</td>
+		<td>7</td>
+		<td>Y</td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td>B</td>
+		<td>18</td>
+	</tr>
+</table>
+<script type="text/javascript">
+	var arr = [];
+	/*jQuery('#tbl tr td').each(function(index){
+		if(jQuery(this).text() !='') {
+			arr.push(jQuery(this).text());
+		}
+	});
+	jQuery('#tbl tr td').each(function(index){
+		jQuery(this).text('');
+		jQuery(this).text(arr[index]);
+	});*/
+	/*jQuery('#tbl tr').each(function(index){
+		var tt = jQuery(this).find("td:eq(1)").text();
+		arr.push(tt);
+	});
+	jQuery('#tbl tr').each(function(index){
+		jQuery(this).find("td").text('');
+		console.log(arr[index]);
+		jQuery(this).find("td:eq(1)").text(arr[index]);
+	});*/
+
+	var x = jQuery('tr:eq(1)').html();
+		// console.log(x);
+	jQuery(x).filter('td').each(function(index){
+		var tt = jQuery(this).text();
+		arr.push(tt);
+	});
+	jQuery('#tbl tr').each(function(index){
+		jQuery(this).find("td").text('');
+		console.log(arr[index]);
+		jQuery(this).find("td:eq(1)").text(arr[index]);
+	});
+	console.log(arr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript MDN</title>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	let arr =[];
+	function addelem(){
+		var elem = document.getElementById('arrelem').value;
+		document.getElementById('arrelem').value='';
+		var arrlen = arr.length;
+		if(arrlen==0) {
+			arr.push(elem);
+		} else {
+			arr.forEach(
+				function(element) {
+					var elemindex = arr.indexOf(element);
+					if(elem>element){
+						arr.splice(elemindex, 0, elem);
+					} else {
+						arr.unshift(elem);
+					}
+				}
+			);
+		}
+		// arr.push(elem);
+		console.log(arr);
+
+	}
+	</script>
+</head>
+<body>
+<input type="text" name="arrelem" id="arrelem" value="">
+<button onclick="return addelem();">GO</button>
+</body>
+</html>

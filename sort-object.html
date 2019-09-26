@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sort Object</title>
+	<style type="text/css"></style>	
+</head>
+<body>
+<script type="text/javascript">
+function Solution(arr) {
+	var arr2 =[];
+	var arr3 =[];
+	arr.forEach(function(item) {
+		arr2.push(item.name);
+	});
+	arr2.sort();
+	arr2.forEach(function(item) {
+		arr3.push({name:item});
+	});
+	console.log(arr3);
+}
+var A=[{name:'Shashank'},{name:'Hemant'},{name:'Shyam'},{name:'Vikash'},{name:'Arun'}];
+Solution(A);
+</script>
+</body>
+</html>
